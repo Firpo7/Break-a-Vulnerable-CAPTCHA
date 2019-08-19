@@ -1,0 +1,4 @@
+*.bmp
+*_set
+*.h5
+__pycache__
