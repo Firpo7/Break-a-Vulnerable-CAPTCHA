@@ -15,6 +15,8 @@ After that, the program will split each letter and input them to a Neural Networ
 
 The average accuracy reached per letter is ~97%, corresponding to an ~85% per CAPTCHA
 
+**I strongly suggest you to unzip the given archive to start using this program**
+
 ## Requirements
 - Python 3.x
 - An environments with installed the libraries in ```requirements.txt``` (you can run ```conda env create -f environment.yml```)

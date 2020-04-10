@@ -2,3 +2,6 @@
 *_set
 *.h5
 __pycache__
+venv
+.vscode
+.idea

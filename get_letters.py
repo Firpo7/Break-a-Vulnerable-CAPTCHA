@@ -16,6 +16,8 @@ n = (0,0,0)
 w1 = 255
 n1 = 0
 
+train_set_folder = 'train_set'
+
 def terminate_program(score, N, modelChoosen):
 	if modelChoosen:
 		print("\n\nAI Score -> {}/{}".format(score, N))
@@ -24,10 +26,12 @@ def terminate_program(score, N, modelChoosen):
 
 def save_letters(tmp, s):
 	try:
+		s = s.upper()
 		for n in range(5):
-			tmp[n].save('./train_set/{}/{}_{}_{}.bmp'.format(s[n],s[n],n, s))
+			tmp[n].save('./{}/{}/{}_{}_{}.bmp'.format(train_set_folder,s[n],s[n],n, s))
 		print(colored("\tsaved", "green"))
-	except:
+	except Exception as e:
+		print(e)
 		print(colored("\tnot saved", "red"))
 
 def first_filter(im_original):
@@ -98,8 +102,21 @@ def clean_image(im_original):
 			r2 = pix2[i,j]
 			pix[i,j] = (r & r2)
 	return im.convert('L')
+
+def createDirectories():
+	try:
+		os.mkdir('./{}/'.format(train_set_folder))
+	except:
+		return
+	for c in string.ascii_uppercase:
+		try:
+			os.mkdir('./{}/{}/'.format(train_set_folder,c))
+		except:
+			continue
+
 	
 modelChoosen = False
+createDirectories()
 
 print("You can use the help of a trained model to speed up the gathering")
 try:
