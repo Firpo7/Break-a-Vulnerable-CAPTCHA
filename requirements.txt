@@ -2,7 +2,7 @@ Keras==2.2.4
 matplotlib==3.0.3
 numpy==1.16.2
 Pillow>=7.1.0
-requests==2.21.0
+requests==2.31.0
 termcolor==1.1.0
 opencv-python==4.2.0.34
 tensorflow
